@@ -14,7 +14,8 @@ from keras.preprocessing import sequence
 
 class CustomerLoss(ModelBase):
     def __init__(self, num_class):
-        super(ModelBase, self).__init__()
+        super(CustomerLoss, self).__init__()
+        print self.model
         self.num_classes = num_class
         self.model.add(Conv2D(32, (3, 3), padding='valid', input_shape=(28, 28, 1), activation='relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -26,3 +27,7 @@ class CustomerLoss(ModelBase):
         self.model.add(Dense(128, activation='relu'))
         self.model.add(Dense(self.num_classes, activation='softmax'))
         self.model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=[categorical_accuracy])
+
+
+if __name__ == "__main__":
+    CustomerLoss(2)

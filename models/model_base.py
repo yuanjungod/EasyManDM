@@ -5,6 +5,7 @@ from keras.models import load_model
 
 
 class ModelBase(object):
+
     def __init__(self):
         self.model = Sequential()
 
