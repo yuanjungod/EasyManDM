@@ -16,6 +16,9 @@ class ModelBase(object):
                        validation_split, validation_data, shuffle,
                        class_weight, sample_weight, initial_epoch)
 
+    def predict_on_batch(self, x):
+        return self.model.predict_on_batch(x)
+
     def predict(self, x):
         return self.model.predict(x)
 
