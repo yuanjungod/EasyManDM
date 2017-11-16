@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae491d79-53fa-473d-9d21-d51c50b02013" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/customer.py" afterPath="$PROJECT_DIR$/datasets/customer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobs/customer_loss_train.py" afterPath="$PROJECT_DIR$/jobs/customer_loss_train.py" />
     </list>
     <ignored path="EasyManDL.py.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +38,8 @@
       <file leaf-file-name="customer_loss.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/customer_loss.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="54" lean-forward="true" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+            <state relative-caret-position="234">
+              <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
               <folding>
                 <element signature="e#23#53#0" expanded="true" />
               </folding>
@@ -57,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/customer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="2296">
               <caret line="157" column="47" lean-forward="true" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
               <folding>
                 <element signature="e#23#37#0" expanded="true" />
@@ -69,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer_loss_train.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="customer_loss_train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/customer_loss_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="255">
+              <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding>
                 <element signature="e#24#39#0" expanded="true" />
               </folding>
@@ -178,8 +178,8 @@
         <option value="$PROJECT_DIR$/datasets/db_config.py" />
         <option value="$PROJECT_DIR$/models/customer_loss.py" />
         <option value="$PROJECT_DIR$/models/model_base.py" />
-        <option value="$PROJECT_DIR$/jobs/customer_loss_train.py" />
         <option value="$PROJECT_DIR$/datasets/customer.py" />
+        <option value="$PROJECT_DIR$/jobs/customer_loss_train.py" />
       </list>
     </option>
   </component>
@@ -1042,16 +1042,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/customer_loss.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="54" lean-forward="true" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-          <folding>
-            <element signature="e#23#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/keras/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -1078,22 +1068,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/customer_loss_train.py">
+    <entry file="file://$PROJECT_DIR$/models/customer_loss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="234">
+          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
           <folding>
-            <element signature="e#24#39#0" expanded="true" />
+            <element signature="e#23#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/datasets/customer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
+        <state relative-caret-position="2296">
           <caret line="157" column="47" lean-forward="true" selection-start-line="157" selection-start-column="47" selection-end-line="157" selection-end-column="47" />
           <folding>
             <element signature="e#23#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/customer_loss_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="e#24#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
