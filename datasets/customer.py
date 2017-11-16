@@ -99,7 +99,7 @@ class Customer(object):
             lambda a: 1 if a in self.__dead_user_id_dict and 0 < (self.__dead_user_id_dict[a] - dead_time).days < 31 else 0)
         train_y = pre_pd["is_dead_user"].tolist()
         if sum(train_y) == 0:
-            print "discard"
+            # print "discard"
             return None, None
         # print train_y
         train_y = np_utils.to_categorical(train_y)
@@ -154,7 +154,7 @@ class Customer(object):
                     if train_x is None:
                         train_x, train_y = x, y
                     else:
-                        if train_x.shape[0] % 2000 == 0:
+                        if len(train_x.shape[0]) % 2000 == 0:
                             print train_x.shape
                             print len(train_y), sum(train_y)
                         train_x = np.concatenate([train_x, x])
