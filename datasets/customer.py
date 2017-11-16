@@ -5,7 +5,7 @@ import pandas as pd
 from keras.utils import np_utils
 import random
 import datetime
-from db_config import *
+from datasets.db_config import *
 
 
 class Customer(object):
@@ -33,7 +33,7 @@ class Customer(object):
             # print "1111", 0<(dead_user["RUN_TIME"].date() - datetime.datetime.strptime("201709", "%Y%m").date()).days<30
             self.__dead_user_id_dict[dead_user["ID_NO"]] = dead_user["RUN_TIME"].date()
             self.__dead_user_info_list.append({"ID_NO": dead_user["ID_NO"], "PHONE_NO": dead_user["PHONE_NO"]})
-        print "len(__dead_user_info_list) = %s" % len(self.__dead_user_info_list)
+        print("len(__dead_user_info_list) = %s" % len(self.__dead_user_info_list))
 
     @classmethod
     def train_data_encode(cls, train_pd):
@@ -147,7 +147,7 @@ class Customer(object):
                 )
                 if len(ur_user_info_list) == 0:
                     continue
-                print "######", len(ur_user_info_list)
+                print("######", len(ur_user_info_list))
                 dead_time = datetime.datetime.strptime(table_time, "%Y%m").date()
                 ur_user_info_list_len = len(ur_user_info_list)
                 user_info_step_length = 300
@@ -159,9 +159,9 @@ class Customer(object):
                     if train_x is None:
                         train_x, train_y = x, y
                     else:
-                        if train_x.shape[0] % 2000 == 0:
-                            print train_x.shape
-                            print len(train_y), sum(train_y)
+                        if train_x.shape[0] % 200 == 0:
+                            print(train_x.shape)
+                            # print(len(train_y), sum(train_y))
                         train_x = np.concatenate([train_x, x])
                         train_y = np.concatenate([train_y, y])
 
@@ -180,6 +180,6 @@ if __name__ == "__main__":
     for i in Customer(portrait_db).query_customer_info():
         # print i[0][:10]
         # exit()
-        print "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+        print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 
 

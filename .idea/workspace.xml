@@ -7,7 +7,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/customer_loss_train.py" afterPath="$PROJECT_DIR$/customer_loss_train.py" />
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jobs/customer_loss_train.py" afterPath="$PROJECT_DIR$/jobs/customer_loss_train.py" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/customer.py" afterPath="$PROJECT_DIR$/datasets/customer.py" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/customer_loss.py" afterPath="$PROJECT_DIR$/models/customer_loss.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/model_base.py" afterPath="$PROJECT_DIR$/models/model_base.py" />
     </list>
@@ -32,14 +36,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="customer_loss.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/customer_loss.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="627">
               <caret line="40" column="71" lean-forward="true" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
+=======
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/keras/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="924" column="8" lean-forward="false" selection-start-line="924" selection-start-column="8" selection-end-line="924" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/tensorflow/contrib/keras/python/keras/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-121">
+              <caret line="896" column="6" lean-forward="false" selection-start-line="896" selection-start-column="6" selection-end-line="896" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="customer_loss.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/customer_loss.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="23" column="56" lean-forward="true" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
               <folding>
                 <element signature="e#23#53#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="normalization.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/keras/layers/normalization.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="55" column="8" lean-forward="false" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,8 +99,13 @@
       <file leaf-file-name="customer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/datasets/customer.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="1188">
               <caret line="42" column="103" lean-forward="false" selection-start-line="42" selection-start-column="103" selection-end-line="42" selection-end-column="103" />
+=======
+            <state relative-caret-position="212">
+              <caret line="161" column="47" lean-forward="false" selection-start-line="161" selection-start-column="47" selection-end-line="161" selection-end-column="47" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
               <folding>
                 <element signature="e#23#37#0" expanded="true" />
               </folding>
@@ -79,8 +126,13 @@
       <file leaf-file-name="customer_loss_train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/customer_loss_train.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="672">
               <caret line="31" column="106" lean-forward="false" selection-start-line="31" selection-start-column="106" selection-end-line="31" selection-end-column="106" />
+=======
+            <state relative-caret-position="275">
+              <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="46" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
               <folding>
                 <element signature="e#24#39#0" expanded="true" />
               </folding>
@@ -113,8 +165,13 @@
       <file leaf-file-name="model_base.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/model_base.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="305">
               <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+=======
+            <state relative-caret-position="158">
+              <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="40" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
               <folding>
                 <element signature="e#24#59#0" expanded="true" />
               </folding>
@@ -165,12 +222,20 @@
         <option value="$PROJECT_DIR$/models/mytest.py" />
         <option value="$PROJECT_DIR$/models/classify_image.py" />
         <option value="$PROJECT_DIR$/pd_test.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/datasets/customer.py" />
         <option value="$PROJECT_DIR$/datasets/db_config.py" />
         <option value="$PROJECT_DIR$/models/customer_loss.py" />
         <option value="$PROJECT_DIR$/jobs/customer_loss_train.py" />
         <option value="$PROJECT_DIR$/models/model_base.py" />
+=======
+        <option value="$PROJECT_DIR$/jobs/customer_loss_train.py" />
+        <option value="$PROJECT_DIR$/datasets/db_config.py" />
+        <option value="$PROJECT_DIR$/models/model_base.py" />
+        <option value="$PROJECT_DIR$/datasets/customer.py" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
         <option value="$PROJECT_DIR$/customer_loss_train.py" />
+        <option value="$PROJECT_DIR$/models/customer_loss.py" />
       </list>
     </option>
   </component>
@@ -630,6 +695,10 @@
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19616027" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19542536" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36141303" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -843,28 +912,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datasets/customer.py">
+    <entry file="file://$PROJECT_DIR$/jobs/customer_loss_train.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1188">
           <caret line="42" column="103" lean-forward="false" selection-start-line="42" selection-start-column="103" selection-end-line="42" selection-end-column="103" />
+=======
+        <state relative-caret-position="221">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
           <folding>
-            <element signature="e#23#37#0" expanded="true" />
+            <element signature="e#24#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/keras/layers/convolutional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="424" column="8" lean-forward="false" selection-start-line="424" selection-start-column="8" selection-end-line="424" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer_loss_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <element signature="e#24#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/keras/models.py" />
     <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/keras/layers/convolutional.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2017.2/system/python_stubs/2041629593/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="470" column="0" lean-forward="false" selection-start-line="470" selection-start-column="0" selection-end-line="470" selection-end-column="0" />
+=======
+    <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/tensorflow/contrib/keras/python/keras/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-121">
+          <caret line="896" column="6" lean-forward="false" selection-start-line="896" selection-start-column="6" selection-end-line="896" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/keras/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="924" column="8" lean-forward="false" selection-start-line="924" selection-start-column="8" selection-end-line="924" selection-end-column="8" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/DeepLearning/Lib/site-packages/keras/layers/convolutional.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="33">
           <caret line="342" column="0" lean-forward="false" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="0" />
           <folding />
@@ -877,10 +985,27 @@
           <caret line="40" column="71" lean-forward="true" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
           <folding>
             <element signature="e#23#53#0" expanded="true" />
+=======
+        <state relative-caret-position="158">
+          <caret line="22" column="40" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="40" />
+          <folding>
+            <element signature="e#24#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/customer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="161" column="47" lean-forward="false" selection-start-line="161" selection-start-column="47" selection-end-line="161" selection-end-column="47" />
+          <folding>
+            <element signature="e#23#37#0" expanded="true" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/customer_loss_train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="672">
@@ -888,19 +1013,32 @@
           <folding>
             <element signature="e#24#39#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$USER_HOME$/anaconda/envs/gcforest/lib/python2.7/site-packages/keras/layers/normalization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="55" column="8" lean-forward="false" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+          <folding />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/model_base.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="305">
           <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+=======
+        <state relative-caret-position="60">
+          <caret line="23" column="56" lean-forward="true" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
           <folding>
             <element signature="e#24#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/jobs/customer_loss_train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
@@ -911,5 +1049,7 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 9e5a0c080018eeb14f8820a3c1d97c77b36d99b2
   </component>
 </project>
