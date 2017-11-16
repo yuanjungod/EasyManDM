@@ -9,12 +9,10 @@ plat_form_db = get_db(host="192.168.2.240", user="yuanjun", password="123456")
 
 customer = Customer(plat_form_db)
 
-train_data = customer.query_customer_info()
-
 customer_loss_model = CustomerLoss(2)
 validation_data = None
 start_time = datetime.datetime.now()
-for x, y in train_data:
+for x, y in customer.query_customer_info():
     if validation_data is None:
         validation_data = (x, y)
     else:

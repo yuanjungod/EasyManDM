@@ -13,9 +13,9 @@ class ModelBase(object):
             validation_split=0., validation_data=None, shuffle=True,
             class_weight=None, sample_weight=None, initial_epoch=0):
         print batch_size
-        self.model.fit(self, x, y, batch_size, epochs, verbose, callbacks,
+        self.model.fit(x, y, batch_size, epochs, verbose, callbacks,
                        validation_split, validation_data, shuffle,
-                       class_weight, sample_weight, initial_epoch=initial_epoch)
+                       class_weight, sample_weight, initial_epoch)
 
     def predict(self, x):
         return self.model.predict(x)
