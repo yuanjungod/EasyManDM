@@ -7,12 +7,12 @@ from models.customer_loss import *
 
 plat_form_db = get_db(host="192.168.2.240", user="yuanjun", password="123456")
 
-customer = Customer(plat_form_db)
-
 customer_loss_model = CustomerLoss(2)
 validation_data = None
 start_time = datetime.datetime.now()
-for x, y in customer.query_customer_info():
+for train_date in Customer(plat_form_db).query_customer_info():
+    x = train_date[0]
+    y = train_date[1]
     if validation_data is None:
         validation_data = (x, y)
     else:
