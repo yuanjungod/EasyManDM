@@ -160,7 +160,7 @@ class Customer(object):
                         train_x = np.concatenate([train_x, x])
                         train_y = np.concatenate([train_y, y])
 
-                    if len(train_x) > 10000:
+                    if len(train_x) > 1000:
                         yield train_x, train_y
                         train_x = None
                         train_y = None

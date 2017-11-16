@@ -15,13 +15,12 @@ from keras.preprocessing import sequence
 class CustomerLoss(ModelBase):
     def __init__(self, num_class):
         super(CustomerLoss, self).__init__()
-        print self.model
         self.num_classes = num_class
-        self.model.add(Conv2D(32, (3, 3), padding='valid', input_shape=(28, 28, 1), activation='relu'))
+        self.model.add(Conv2D(32, (2, 3), padding='valid', input_shape=(3, 97, 1), activation='relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
-        self.model.add(Conv2D(20, (3, 3), padding='valid', input_shape=(28, 28, 1), activation='relu'))
+        self.model.add(Conv2D(20, (1, 3), padding='valid', activation='relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
-        self.model.add(Conv2D(15, (3, 3), padding='valid', activation='relu'))
+        self.model.add(Conv2D(15, (1, 3), padding='valid', activation='relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
         self.model.add(Flatten())
         self.model.add(Dense(128, activation='relu'))
