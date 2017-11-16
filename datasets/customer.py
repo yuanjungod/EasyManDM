@@ -29,8 +29,11 @@ class Customer(object):
         )
         for dead_user in dead_user_id_list:
             # print dead_user["RUN_TIME"], type(dead_user["RUN_TIME"])
+            # print dead_user["RUN_TIME"].date()
+            # print "1111", 0<(dead_user["RUN_TIME"].date() - datetime.datetime.strptime("201709", "%Y%m").date()).days<30
             self.__dead_user_id_dict[dead_user["ID_NO"]] = dead_user["RUN_TIME"].date()
             self.__dead_user_info_list.append({"ID_NO": dead_user["ID_NO"], "PHONE_NO": dead_user["PHONE_NO"]})
+        print "len(__dead_user_info_list) = %s" % len(self.__dead_user_info_list)
 
     @classmethod
     def train_data_encode(cls, train_pd):
@@ -85,14 +88,16 @@ class Customer(object):
                 where="USER_ID in %s" % user_id_no_list_str
             )
 
-            current_pd = pd.merge(pd.merge(ur_user_info_pd, call_cdr_s_pd, on="PHONE_NO"), gprs_user_ms_s_pd, on="PHONE_NO")
+            current_pd = pd.merge(pd.merge(ur_user_info_pd, call_cdr_s_pd, on="PHONE_NO", how="outer"),
+                                  gprs_user_ms_s_pd, on="PHONE_NO", how="outer")
+            current_pd = current_pd.fillna(-1)
             current_pd = self.train_data_encode(current_pd)
             if pre_pd is None:
                 pre_pd = current_pd
                 pre_suffix = table_time
             else:
                 pre_pd = pre_pd.join(
-                    current_pd.set_index("PHONE_NO"), how="inner", lsuffix=pre_suffix, rsuffix=table_time, on="PHONE_NO")
+                    current_pd.set_index("PHONE_NO"), how="outer", lsuffix=pre_suffix, rsuffix=table_time, on="PHONE_NO")
                 pre_suffix = table_time
             # print pre_pd.head(5)
         pre_pd["is_dead_user"] = pre_pd["ID_NO"].map(
@@ -104,7 +109,7 @@ class Customer(object):
         # print train_y
         train_y = np_utils.to_categorical(train_y)
         del_column = ["is_dead_user"]
-        pre_pd.fillna(0)
+        # pre_pd.fillna(0)
         # print dir(pre_pd.filter(regex='PHONE_NO$', axis=1).columns)
         del_column += pre_pd.filter(like='PHONE_NO', axis=1).columns.tolist()
         del_column += pre_pd.filter(like='ID_NO', axis=1).columns.tolist()
@@ -160,7 +165,7 @@ class Customer(object):
                         train_x = np.concatenate([train_x, x])
                         train_y = np.concatenate([train_y, y])
 
-                    if len(train_x) > 10000:
+                    if len(train_x) > 1000:
                         yield train_x, train_y
                         train_x = None
                         train_y = None
