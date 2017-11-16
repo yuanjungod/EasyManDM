@@ -159,7 +159,7 @@ class Customer(object):
                     if train_x is None:
                         train_x, train_y = x, y
                     else:
-                        if train_x.shape[0] % 2000 == 0:
+                        if train_x.shape[0] % 200 == 0:
                             print train_x.shape
                             print len(train_y), sum(train_y)
                         train_x = np.concatenate([train_x, x])

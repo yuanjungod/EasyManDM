@@ -19,6 +19,9 @@ class ModelBase(object):
     def predict_on_batch(self, x):
         return self.model.predict_on_batch(x)
 
+    def train_on_batch(self, x, y):
+        return self.model.train_on_batch(x, y)
+
     def predict(self, x):
         return self.model.predict(x)
 

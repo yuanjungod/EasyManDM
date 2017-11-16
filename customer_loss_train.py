@@ -19,16 +19,18 @@ for train_date in Customer(plat_form_db).query_customer_info():
         validation_data = (x, y)
     else:
         print sum(y) * 1.0 / len(y)
-        epochs = 30
-        print "initial_epoch", initial_epoch
-        customer_loss_model.fit(
-            x=x, y=y, shuffle=True, batch_size=200, epochs=epochs,
-            initial_epoch=initial_epoch)
-        initial_epoch += epochs
+        for i in range(10):
+            customer_loss_model.train_on_batch(x, y)
+        # epochs = 30
+        # print "initial_epoch", initial_epoch
+        # customer_loss_model.fit(
+        #     x=x, y=y, shuffle=True, batch_size=20, epochs=epochs,
+        #     initial_epoch=initial_epoch)
+        # initial_epoch += epochs
         print "train acc", float(np.sum(np.argmax(customer_loss_model.predict_on_batch(x), axis=1)
                                         == np.argmax(y, axis=1))) / len(y)
         print "test acc", float(np.sum(np.argmax(customer_loss_model.predict_on_batch(validation_data[0]), axis=1)
-                                       == np.argmax(validation_data[1], axis=1))) / len(y)
+                                       == np.argmax(validation_data[1], axis=1))) / len(validation_data[0])
         # print customer_loss_model.predict_on_batch(validation_data[0])
 
         now = datetime.datetime.now()
