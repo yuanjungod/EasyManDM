@@ -101,7 +101,6 @@ class Customer(object):
         if sum(train_y) == 0:
             print "discard"
             return None, None
-        print sum(train_y), len(train_y)
         # print train_y
         train_y = np_utils.to_categorical(train_y)
         del_column = ["is_dead_user"]
@@ -155,8 +154,9 @@ class Customer(object):
                     if train_x is None:
                         train_x, train_y = x, y
                     else:
-                        print train_x.shape
-                        print x.shape
+                        if train_x.shape[0] % 1000 == 0:
+                            print train_x.shape
+                            print len(train_y), sum(train_y)
                         train_x = np.concatenate([train_x, x])
                         train_y = np.concatenate([train_y, y])
 
