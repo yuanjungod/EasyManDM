@@ -19,6 +19,9 @@ class ModelBase(object):
     def predict_on_batch(self, x):
         return self.model.predict_on_batch(x)
 
+    def get_model_para(self):
+        return self.model.get_config()
+
     def predict(self, x):
         return self.model.predict(x)
 

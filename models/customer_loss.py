@@ -7,7 +7,7 @@ from keras.layers.normalization import BatchNormalization
 from keras.layers.convolutional import Conv2D
 from keras.layers.convolutional import MaxPooling2D
 from keras.layers import Flatten
-from model_base import ModelBase
+from models.model_base import ModelBase
 from keras.metrics import categorical_accuracy
 from keras.preprocessing import sequence
 from keras.layers.normalization import BatchNormalization

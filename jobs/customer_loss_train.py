@@ -14,10 +14,10 @@ for train_date in Customer(plat_form_db).query_customer_info():
     x = train_date[0]
     y = train_date[1]
     if validation_data is None:
-        print sum(y)*1.0/len(y)
+        print(sum(y)*1.0/len(y))
         validation_data = (x, y)
     else:
-        print sum(y)*1.0/len(y)
+        print(sum(y)*1.0/len(y))
         customer_loss_model.fit(x=x, y=y, validation_data=validation_data, shuffle=True, batch_size=1, epochs=6)
 
         now = datetime.datetime.now()
