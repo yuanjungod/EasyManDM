@@ -26,8 +26,9 @@ for train_data in generator:
             customer_loss_model.predict_on_batch(validation_data[0]), axis=1) ==
                                                np.argmax(validation_data[1], axis=1))) / len(validation_data[0])))
     now = datetime.datetime.now()
-    print((now - start_time).seconds % 90 == 0)
-    if (now - start_time).seconds % 90 == 0:
+    print((now - start_time).seconds > 300)
+    if (now - start_time).seconds > 300:
+        start_time = now
         model_save_path = now.strftime("%y%m%d%H") + "customer_loss_train"
         customer_loss_model.save_model(model_save_path)
 
