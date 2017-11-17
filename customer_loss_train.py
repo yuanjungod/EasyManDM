@@ -18,8 +18,10 @@ validation_data = generator.next()
 for train_data in generator:
     for i in range(20):
         customer_loss_model.train_on_batch(train_data[0], train_data[1])
+    print("train_data %s" % (1.0 * sum(train_data[1]) / len(train_data[1])))
     print("train acc %s" % str(float(np.sum(np.argmax(customer_loss_model.predict_on_batch(train_data[0]), axis=1)
                                             == np.argmax(train_data[1], axis=1))) / len(train_data[1])))
+    print("train_data %s" % (1.0 * sum(validation_data[1]) / len(validation_data[1])))
     print("test acc %s" % str(float(np.sum(np.argmax(
             customer_loss_model.predict_on_batch(validation_data[0]), axis=1) ==
                                                np.argmax(validation_data[1], axis=1))) / len(validation_data[0])))
