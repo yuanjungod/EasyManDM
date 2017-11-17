@@ -20,7 +20,7 @@ class ModelBase(object):
         return self.model.predict_on_batch(x)
 
     def get_model_para(self):
-        return self.model.get_config()
+        return self.model.get_weights()
 
     def train_on_batch(self, x, y):
         return self.model.train_on_batch(x, y)

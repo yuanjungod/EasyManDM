@@ -59,12 +59,12 @@ class Customer(object):
         if self.__dead_user_id_dict is None:
             self.query_dead_user_id_no()
         # print "len(self.__dead_user_info_list) = %s" % len(self.__dead_user_info_list)
-        random_choice = random.randint(0, len(self.__dead_user_info_list)-1000)
+        random_choice = random.randint(0, len(self.__dead_user_info_list)-10000)
         user_id_no_list = [user["ID_NO"] for user in ur_user_info_list] + \
-                          [user["ID_NO"] for user in self.__dead_user_info_list[random_choice: random_choice+1000]]
+                          [user["ID_NO"] for user in self.__dead_user_info_list[random_choice: random_choice+10000]]
         user_id_no_list_str = "(" + ",".join(map(str, user_id_no_list)) + ")"
         user_phone_list = [user["PHONE_NO"] for user in ur_user_info_list] + \
-                          [user["PHONE_NO"] for user in self.__dead_user_info_list[random_choice: random_choice+1000]]
+                          [user["PHONE_NO"] for user in self.__dead_user_info_list[random_choice: random_choice+10000]]
         user_phone_list_str = "(" + ",".join(map(str, user_phone_list)) + ")"
 
         pre_pd = None
@@ -88,8 +88,8 @@ class Customer(object):
                 where="USER_ID in %s" % user_id_no_list_str
             )
 
-            current_pd = pd.merge(pd.merge(ur_user_info_pd, call_cdr_s_pd, on="PHONE_NO", how="outer"),
-                                  gprs_user_ms_s_pd, on="PHONE_NO", how="outer")
+            current_pd = pd.merge(pd.merge(ur_user_info_pd, call_cdr_s_pd, on="PHONE_NO", how="left"),
+                                  gprs_user_ms_s_pd, on="PHONE_NO", how="left")
             current_pd = current_pd.fillna(-1)
             current_pd = self.train_data_encode(current_pd)
             if pre_pd is None:
@@ -97,11 +97,12 @@ class Customer(object):
                 pre_suffix = table_time
             else:
                 pre_pd = pre_pd.join(
-                    current_pd.set_index("PHONE_NO"), how="outer", lsuffix=pre_suffix, rsuffix=table_time, on="PHONE_NO")
+                    current_pd.set_index("PHONE_NO"), how="inner", lsuffix=pre_suffix, rsuffix=table_time, on="PHONE_NO")
                 pre_suffix = table_time
             # print pre_pd.head(5)
         pre_pd["is_dead_user"] = pre_pd["ID_NO"].map(
             lambda a: 1 if a in self.__dead_user_id_dict and 0 < (self.__dead_user_id_dict[a] - dead_time).days < 31 else 0)
+        # pre_pd.to_csv(str(datetime.datetime.now()) + ".csv")
         train_y = pre_pd["is_dead_user"].tolist()
         if sum(train_y) == 0:
             # print "discard"
@@ -115,6 +116,7 @@ class Customer(object):
         del_column += pre_pd.filter(like='ID_NO', axis=1).columns.tolist()
         del_column += pre_pd.filter(like='CUST_ID', axis=1).columns.tolist()
         pre_pd = pre_pd.drop(del_column, axis=1)
+        # pre_pd.to_csv(str(datetime.datetime.now())+".csv")
         train_x = np.array(pre_pd)
         train_x = train_x.reshape([train_x.shape[0], len(table_time_list), -1, 1]).astype('float32')
         return train_x, train_y

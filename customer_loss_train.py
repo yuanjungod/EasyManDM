@@ -24,7 +24,7 @@ for train_date in Customer(plat_form_db).query_customer_info():
         customer_loss_model.fit(
             x=x, y=y, shuffle=True, batch_size=200, epochs=epochs,
             initial_epoch=initial_epoch)
-        print(customer_loss_model.get_model_para())
+        print(customer_loss_model.get_model_para().shape())
         initial_epoch += epochs
         print("train acc %s" % str(float(np.sum(np.argmax(customer_loss_model.predict_on_batch(x), axis=1)
                                         == np.argmax(y, axis=1))) / len(y)))
