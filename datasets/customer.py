@@ -121,65 +121,72 @@ class Customer(object):
         train_x = train_x.reshape([train_x.shape[0], len(table_time_list), -1, 1]).astype('float32')
         return train_x, train_y
 
-    def query_customer_info(self):
-        if self.__dead_user_id_dict is None:
-            self.query_dead_user_id_no()
-        train_x = None
-        train_y = None
-        for table_time in ["201709", "201710"]:
-            table_name = "ODS_UR_USER_INFO_" + table_time
-            min_id_no = self.__portrait_db.select(
-                field="min(ID_NO) as min",
-                table_name="ms_01.%s" % table_name
-            )[0]["min"]
-            max_id_no = self.__portrait_db.select(
-                field="max(ID_NO) as max",
-                table_name="ms_01.%s" % table_name
-            )[0]["max"]
-            count_id_no = self.__portrait_db.select(
-                field="count(*) as num",
-                table_name="ms_01.%s" % table_name
-            )[0]["num"]
-            step_length = (max_id_no-min_id_no)/(count_id_no/500)
-            for index in range(min_id_no, max_id_no+1, step_length):
-                ur_user_info_list = self.__portrait_db.select(
-                    field=",".join(UR_USER_INFO),
-                    table_name="ms_01.%s" % table_name,
-                    where="ID_NO >= %s and ID_NO < %s" % (index, index+step_length)
-                )
-                if len(ur_user_info_list) == 0:
-                    continue
-                print("######", len(ur_user_info_list))
-                dead_time = datetime.datetime.strptime(table_time, "%Y%m").date()
-                ur_user_info_list_len = len(ur_user_info_list)
-                user_info_step_length = 300
-                for start in range(0, ur_user_info_list_len+1, user_info_step_length):
-                    x, y = self.get_train_data(ur_user_info_list[start: start+user_info_step_length],
-                                               [str(int(table_time) - i) for i in [1, 2, 3]], dead_time)
-                    if x is None:
+    def query_customer_info(self, data_length):
+        while True:
+            if self.__dead_user_id_dict is None:
+                self.query_dead_user_id_no()
+            train_x = None
+            train_y = None
+            for table_time in ["201709", "201710"]:
+                table_name = "ODS_UR_USER_INFO_" + table_time
+                min_id_no = self.__portrait_db.select(
+                    field="min(ID_NO) as min",
+                    table_name="ms_01.%s" % table_name
+                )[0]["min"]
+                max_id_no = self.__portrait_db.select(
+                    field="max(ID_NO) as max",
+                    table_name="ms_01.%s" % table_name
+                )[0]["max"]
+                count_id_no = self.__portrait_db.select(
+                    field="count(*) as num",
+                    table_name="ms_01.%s" % table_name
+                )[0]["num"]
+                step_length = (max_id_no-min_id_no)/(count_id_no/500)
+                for index in range(min_id_no, max_id_no+1, step_length):
+                    ur_user_info_list = self.__portrait_db.select(
+                        field=",".join(UR_USER_INFO),
+                        table_name="ms_01.%s" % table_name,
+                        where="ID_NO >= %s and ID_NO < %s" % (index, index+step_length)
+                    )
+                    if len(ur_user_info_list) == 0:
                         continue
-                    if train_x is None:
-                        train_x, train_y = x, y
-                    else:
-                        if train_x.shape[0] % 200 == 0:
-                            print(train_x.shape)
-                            # print(len(train_y), sum(train_y))
-                        train_x = np.concatenate([train_x, x])
-                        train_y = np.concatenate([train_y, y])
+                    print("######", len(ur_user_info_list))
+                    dead_time = datetime.datetime.strptime(table_time, "%Y%m").date()
+                    ur_user_info_list_len = len(ur_user_info_list)
+                    user_info_step_length = 300
+                    for start in range(0, ur_user_info_list_len+1, user_info_step_length):
+                        x, y = self.get_train_data(ur_user_info_list[start: start+user_info_step_length],
+                                                   [str(int(table_time) - i) for i in [1, 2, 3]], dead_time)
+                        if x is None:
+                            continue
+                        if train_x is None:
+                            train_x, train_y = x, y
+                        else:
+                            if train_x.shape[0] % 200 == 0:
+                                print(train_x.shape)
+                                # print(len(train_y), sum(train_y))
+                            train_x = np.concatenate([train_x, x])
+                            train_y = np.concatenate([train_y, y])
 
-                    if len(train_x) > 1000:
-                        yield train_x, train_y
-                        train_x = None
-                        train_y = None
-        if train_x is not None:
-            yield train_x, train_y
+                        if len(train_x) > data_length:
+                            # training_data = np.hstack((train_x, train_y))
+                            # training_data = training_data.T
+                            # np.random.shuffle(training_data)
+                            # training_data = training_data.T
+                            # train_x = training_data[:, :-1]
+                            # train_y = training_data[:, -1]
+                            # print 1.0*sum(train_y)/len(train_y)
+                            # print train_x.shape, train_y.shape
+                            yield train_x, train_y
+                            train_x = None
+                            train_y = None
 
 
 if __name__ == "__main__":
     from common.mysql import get_db
 
     portrait_db = get_db("192.168.2.240", "yuanjun", "123456")
-    for i in Customer(portrait_db).query_customer_info():
+    for i in Customer(portrait_db).query_customer_info(100):
         # print i[0][:10]
         # exit()
         print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")

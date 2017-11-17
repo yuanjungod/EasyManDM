@@ -5,7 +5,6 @@ from keras.models import load_model
 
 
 class ModelBase(object):
-
     def __init__(self):
         self.model = Sequential()
 
@@ -30,6 +29,10 @@ class ModelBase(object):
 
     def save_model(self, model_path):
         self.model.save(model_path)
+
+    def fit_generator(self, generator, steps_per_epoch, epochs=1, validation_data=None):
+        self.model.fit_generator(generator, steps_per_epoch, epochs=epochs, validation_data=validation_data,
+                                 workers=2, use_multiprocessing=True)
 
     @classmethod
     def load_model(cls, model_path):
