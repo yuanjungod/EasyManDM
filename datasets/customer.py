@@ -59,12 +59,12 @@ class Customer(object):
         if self.__dead_user_id_dict is None:
             self.query_dead_user_id_no()
         # print "len(self.__dead_user_info_list) = %s" % len(self.__dead_user_info_list)
-        random_choice = random.randint(0, len(self.__dead_user_info_list)-10000)
+        random_choice = random.randint(0, len(self.__dead_user_info_list)-100)
         user_id_no_list = [user["ID_NO"] for user in ur_user_info_list] + \
-                          [user["ID_NO"] for user in self.__dead_user_info_list[random_choice: random_choice+10000]]
+                          [user["ID_NO"] for user in self.__dead_user_info_list[random_choice: random_choice+100]]
         user_id_no_list_str = "(" + ",".join(map(str, user_id_no_list)) + ")"
         user_phone_list = [user["PHONE_NO"] for user in ur_user_info_list] + \
-                          [user["PHONE_NO"] for user in self.__dead_user_info_list[random_choice: random_choice+10000]]
+                          [user["PHONE_NO"] for user in self.__dead_user_info_list[random_choice: random_choice+100]]
         user_phone_list_str = "(" + ",".join(map(str, user_phone_list)) + ")"
 
         pre_pd = None
@@ -127,7 +127,8 @@ class Customer(object):
                 self.query_dead_user_id_no()
             train_x = None
             train_y = None
-            for table_time in ["201709", "201710"]:
+            # for table_time in ["201709", "201710"]:
+            for table_time in ["201710"]:
                 table_name = "ODS_UR_USER_INFO_" + table_time
                 min_id_no = self.__portrait_db.select(
                     field="min(ID_NO) as min",

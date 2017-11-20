@@ -35,7 +35,7 @@ def data_consumer(run_tool):
         print("train acc %s" % str(float(np.sum(np.argmax(run_tool.model.predict_on_batch(train_data[0]), axis=1)
                                                 == np.argmax(train_data[1], axis=1))) / len(train_data[1])))
         print("validation_data %s" % (1.0*sum(validation_data[1])/len(validation_data[1])))
-        print("test acc %s" % str(float(np.sum(np.argmax(
+        print("validation_data acc %s" % str(float(np.sum(np.argmax(
             customer_loss_model.predict_on_batch(validation_data[0]), axis=1) ==
                                                np.argmax(validation_data[1], axis=1))) / len(validation_data[0])))
         if (datetime.datetime.now() - run_tool.start_time).seconds % 300 == 0:

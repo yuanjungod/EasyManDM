@@ -34,6 +34,5 @@ class ModelBase(object):
         self.model.fit_generator(generator, steps_per_epoch, epochs=epochs, validation_data=validation_data,
                                  workers=2, use_multiprocessing=True)
 
-    @classmethod
-    def load_model(cls, model_path):
-        load_model(model_path)
+    def load_model(self, model_path):
+        self.model = load_model(model_path)
